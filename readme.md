@@ -291,10 +291,7 @@ runtimeClasspath - Runtime classpath of source set 'main'.
      |    |         \--- com.github.java-json-tools:msg-simple:1.2 (*)
      |    \--- org.jboss.logging:jboss-logging:3.3.2.Final -> 3.4.1.Final
      \--- org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:2.0.0.Final
-s
-
 ```
-
 
 ## How to Run in Dev mode
 ```
@@ -304,4 +301,17 @@ $ gradle quarkusDev
 ## How to Build
 ```
 $ gradle build
+```
+
+## How to Containerize and Run
+```
+$ docker build -t hello-world-quarkus-with-gradle -f Dockerfile .
+
+$ docker run -p 8080:8080 hello-world-quarkus-with-gradle:latest
+```
+
+## Base Image
+Using UBI9 and Gradle base image from below repository,
+```
+https://github.com/edwin/ubi9-and-gradle
 ```
